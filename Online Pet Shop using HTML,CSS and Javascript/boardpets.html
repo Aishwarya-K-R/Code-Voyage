@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+    alert("Welcome to billing dashboard!")
+    alert("Fill the required details to generate the bill")
+    function printdata()
+    {
+      alert("Scroll up the page to view the generated bill")
+      var username=document.getElementById('name');
+      document.getElementById('UserName').innerHTML="**********BILL**********"+"<br><br>"+ "NAME : "+username.value;
+      var gender=document.getElementsByName('gender');
+      for(let i=0;i<gender.length;i++)
+      {
+          if(gender[i].checked)
+          {
+            document.getElementById('UserGender').innerHTML= "GENDER : "+gender[i].value;    
+          }
+      }
+      var userage=document.getElementById('age');
+      document.getElementById('UserAge').innerHTML= "AGE : "+userage.value;
+      var useremail=document.getElementById('email');
+      document.getElementById('UserMail').innerHTML= "EMAIL : "+useremail.value;
+      var userphone=document.getElementById('pno');
+      document.getElementById('UserPhone').innerHTML= "PHONE NO. : "+userphone.value;
+      var useraddress=document.getElementById('location');
+      document.getElementById('UserAddress').innerHTML= "RESIDENTIAL ADDRESS : "+useraddress.value;
+      var category=document.getElementsByName('option');
+      for(let i=0;i<category.length;i++)
+      {
+          if(category[i].checked)
+          {
+            document.getElementById('category').innerHTML= "CATEGORY : "+category[i].value;    
+          }
+      }
+      var petage=document.getElementById('page');
+      document.getElementById('petage').innerHTML= "PET AGE : "+petage.value;
+      var petbreed=document.getElementById('pbreed');
+      document.getElementById('petbreed').innerHTML= "PET BREED : "+petbreed.value;
+      var pdays=document.getElementById('days');
+      document.getElementById('ndays').innerHTML= "NUMBER OF DAYS : "+pdays.value;
+      var price=850;
+      document.getElementById('cost').innerHTML= "PRICE : RS."+(pdays.value*price)+"<br><br>"+"*******THANK YOU*******"+"<br><br>"+"~~~~~~~VISIT AGAIN~~~~~~~"+"<br><br>"+"For any queries,"+"<br><br>"+"CONTACT NO. : 9886959929"+"<br><br>"+"ADDRESS : CHARLIE PET PALACE, #15, 12th Main, 20th Cross, Nagarbhavi, Bangalore-72"+"<br><br>"+"TIMINGS : 9:00 AM TO 10:00 PM";
+
+    }
+    </script>
+</head>
+<body style="background-color: rgb(250, 189, 135);">
+<p id="heading">CHARLIE PET PALACE</p>
+<img src="Screenshot (219).png" width="1155px" height="10px">
+<a href="buypuppies.html">
+<button class="btn1">BACK</button></a>
+<a href="firstpage.html">
+<button class="btn2">HOME</button>
+</a>
+<h3 style="color: crimson; text-align: center;">WELCOME TO BILLING DASHBOARD</h3>
+<h5 style="color: black; text-align: center;">Please fill the details to generate the bill</h5>
+<br>
+  <form>
+    <label>CUSTOMER'S NAME</label>
+    <br><br>
+    <input type="name" id="name" placeholder="Full Name">
+    <br><br>
+    <label>SELECT GENDER</label>
+    <br><br>
+    <label>MALE</label>
+    <input type="radio" id="Male" name="gender" value="Male">
+    <br><br>
+    <label>FEMALE</label>
+    <input type="radio" id="Female" name="gender" value="Female">
+    <br><br>
+    <label>OTHERS</label>
+    <input type="radio" id="Others" name="gender" value="Others">
+    <br><br>
+    <label>AGE</label>
+    <br><br>
+    <input type="number" id="age" placeholder="User Age" min="1" max="100">
+    <br><br>
+    <label>EMAIL</label>
+    <br><br>
+    <input type="email" id="email" placeholder="Enter Email....." >
+    <br><br>
+    <label>PHONE NO.</label>
+    <br><br>
+    <input type="name" id="pno">
+    <br><br>
+    <label>RESIDENTIAL ADDRESS</label>
+    <br><br>
+    <input type="text" id="location" placeholder="Enter Address">
+    <br><br>
+    <label>SELECT THE CATEGORY</label>
+    <br><br>
+    <label>PUPPY</label>
+    <input type="radio" id="puppy" name="option" value="puppy">
+    <br><br>
+    <label>DOG</label>
+    <input type="radio" id="dog" name="option" value="dog">
+    <br><br>
+    <label>PET AGE(IN YEARS)</label>
+    <br><br>
+    <input type="number" id="page" placeholder="Pet Age" min="1" max="20">
+    <br><br>
+    <label>PET BREED</label>
+    <br><br>
+    <input type="name" id="pbreed">
+    <br><br> 
+    <label>NUMBER OF DAYS</label>
+    <br><br>
+    <input type="number" id="days" min="1" max="30">
+    <br><br>
+    <button type="reset">RESET</button>
+    <br>
+    </form>
+    <button type="submit" onclick="printdata()">SUBMIT</button>
+    <p id="UserName"></p>
+    <p id="UserAge"></p>
+    <p id="UserMail"></p>
+    <p id="UserGender"></p>
+    <p id="UserPhone"></p>
+    <p id="UserAddress"></p>
+    <p id="category"></p>
+    <p id="petage"></p>
+    <p id="petbreed"></p>
+    <p id="ndays"></p>
+    <p id="cost"></p>
+    </body>
+    </html>
+
+
