@@ -1,0 +1,85 @@
+package project;
+import java.util.Scanner;
+import java.util.Random;
+public class hangman_new {
+public static void main(String[]args) {
+String st="HAPPY NEW YEAR",u=" ",s1,b=" ";
+char g;
+int i,l,lives,n=0,k=0;
+lives=6;
+for(i=0;i<st.length();i++) {
+if(st.charAt(i)!=' ') {
+n+=1;
+}
+}
+String str=st.toUpperCase();
+Scanner in=new Scanner(System.in);
+char s[]=new char[str.length()];
+char w[]=new char[str.length()];
+w=str.toCharArray();
+
+System.out.println("welcome to hangman\nlets play!");
+for(i=0;i<str.length();i++){
+if(str.charAt(i)!=' ')
+{
+s[i]='-';
+}
+else
+{
+s[i]=' ';
+}
+System.out.print(s[i]);}
+System.out.println();
+while((lives!=0)&&(n!=0))
+{
+k=0;
+System.out.println("used letters:"+u);
+System.out.println("lives:"+lives);
+System.out.println("guess a letter");
+g=in.next().charAt(0);
+if(u.indexOf(g)>-1) {
+System.out.println("you have already guessed a letter try again");
+k=1;
+System.out.println(s);
+continue;
+}
+if(u.indexOf(g)==-1)
+{u=u+' '+g;}
+l=str.indexOf(g);
+if(l>-1) {
+for(i=0;i<str.length();i++) {
+if((g==w[i])&&(k==0)){
+n-=1;
+}
+if((g==w[i])||(u.indexOf(w[i])>-1)) {
+s[i]=w[i];
+System.out.print(s[i]);
+}
+else
+{
+s[i]='-';
+System.out.print(s[i]);
+}
+}
+System.out.println();
+}
+else {
+lives-=1;
+System.out.println("life lost try again");
+System.out.println(s);
+}
+}
+s1=String.copyValueOf(s);
+if(s1.equals(str))
+{
+System.out.println("congratulations! you won");
+
+}
+else {
+System.out.println("you lost");
+System.out.println("your word was:"+str);
+System.out.println("better luck next time");
+}
+in.close();
+}
+}
