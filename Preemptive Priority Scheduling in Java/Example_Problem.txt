@@ -1,0 +1,41 @@
+There are 7 processes P1, P2, P3, P4, P5, P6 and P7 given. Their respective priorities, Arrival Times and Burst times are given in the table below.
+
+
+Process Id	Priority	Arrival Time	Burst Time
+1		2(L)		0		1
+2		6		1		7
+3		3		2		3
+4		5		3		6
+5		4		4		5
+6		10(H)		5		15
+7		9		15		8
+
+Solution :
+1. At time 0, P1 arrives with the burst time of 1 units and priority 2. Since no other process is available hence this will be scheduled till next job arrives or its completion (whichever is lesser).
+2. At time 1, P2 arrives. P1 has completed its execution and no other process is available at this time hence the Operating system has to schedule it regardless of the priority assigned to it.
+3. The Next process P3 arrives at time unit 2, the priority of P3 is higher to P2. Hence the execution of P2 will be stopped and P3 will be scheduled on the CPU.
+4. During the execution of P3, three more processes P4, P5 and P6 becomes available. Since, all these three have the priority lower to the process in execution so PS can't preempt the process. P3 will complete its execution and then P5 will be scheduled with the priority highest among the available processes.
+5. Meanwhile the execution of P5, all the processes got available in the ready queue. At this point, the algorithm will start behaving as Non Preemptive Priority Scheduling. Hence now, once all the processes get available in the ready queue, the OS just took the process with the highest priority and execute that process till completion. In this case, P4 will be scheduled and will be executed till the completion.
+6. Since P4 is completed, the other process with the highest priority available in the ready queue is P2. Hence P2 will be scheduled next.
+7. P2 is given the CPU till the completion. Since its remaining burst time is 6 units hence P7 will be scheduled after this.
+8. The only remaining process is P6 with the least priority, the Operating System has no choice unless of executing it. This will be executed at the last.
+9. The Completion Time of each process is determined with the help of GANTT chart. The turnaround time and the waiting time can be calculated by the following formula.
+
+Turnaround Time = Completion Time - Arrival Time   
+Waiting Time = Turn Around Time - Burst Time 
+  
+Process Id	Priority	Arrival Time	Burst Time	Completion Time	Turn around Time	Waiting Time
+1		2		0		1		1		1			0
+2		6		1		7		22		21			14
+3		3		2		3		5		3			0
+4		5		3		6		16		13			7	
+5		4		4		5		10		6			1
+6		10		5		15		45		40			25
+7		9		6		8		30		24			16
+                    
+Avg Waiting Time = (0+14+0+7+1+25+16)/7 = 63/7 = 9 units
+
+Gantt Chart :
+
+| P1 | P2 | P3 | P5 | P4 | P2 | P7 | P6 |
+0    1    2    5    10   16   22   30   45
