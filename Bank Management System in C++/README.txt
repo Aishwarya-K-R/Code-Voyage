@@ -3,7 +3,7 @@
 This project simulates an actual Bank operations in an Online mode to the customers.
 
 Benefits :
-People literally the value of Online mode during the pandemic.
+People literally understood the value of Online mode during the pandemic.
 This project aims to benefit the customers by saving their time and energy going to the bank, giving an access to the bank operations from the place they are currently at. 
 
 Functionalities implemented :
