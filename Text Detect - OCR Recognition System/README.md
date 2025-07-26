@@ -1,4 +1,4 @@
-*****Text Detect : Building an OCR Recognition System*****
+***** Text Detect : Building an OCR Recognition System *****
 
 Overview of the Project : 
 This project is aimed at developing a recognition system that recognizes the text and license plates from the images using the Python tools such as EasyOCR and Pytesseract.
