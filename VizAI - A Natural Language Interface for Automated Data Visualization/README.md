@@ -34,3 +34,5 @@ Features of the Project :
 Steps for Implementation :
 - Download the Source Code of the Project / Clone this repository.
 - Run app.py file in the IDE to view the output.
+
+***Note : This repository contains Output Screenshots of the simulated project as well***
