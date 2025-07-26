@@ -6,7 +6,7 @@ Overview of the Project :
 - Users can interact with the system simply by typing queries in their natural language as convenient to them and VizAI will process the request and return the appropriate chart (visualization).
 - By bridging the gap between technical complexity and user-friendly design, VizAI democratizes access to data-driven decision-making.
 
-Requirements of the Project
+Requirements of the Project :
 - Operating System : macOS Sonoma (14.5)
 - Programming Language : Python
 - Python Version : 3.11
