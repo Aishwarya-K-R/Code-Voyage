@@ -1,0 +1,88 @@
+#p1{
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    background-color: hotpink;
+    text-decoration-color: blue;
+    display: inline-block;
+    width: 24.7%;
+}
+.img{
+    border:solid black;
+}
+img:hover{
+    transform: scale(1.2);
+}
+.btn:hover{
+    transform: scale(1.2);
+}
+#heading{
+    font-style: italic;
+    color:red;
+    background-color: yellow;
+    text-align: center;
+}
+#heading1{
+    color: green;
+    font-size: x-large;
+}
+input.checkbox{
+    width: 40px;
+    height: 40px;
+}
+.btn1{
+    margin-right:20px;
+    display: inline-block;
+}
+.btn1:hover{
+    transform: scale(1.2);
+}
+.btn2:hover{
+    transform: scale(1.2);
+} 
+#heading2{
+    color: purple;
+    font-size: x-large;
+}
+#heading3{
+    color: gray;
+    font-size: x-large;
+}
+label{
+    color: purple;
+}
+input[type='number']
+{
+    width:20%;
+}
+input[type='text']
+{
+    width:80%;
+}
+input[type='email']
+{
+    width:50%;
+}
+input[type='name']
+{
+    width:50%;
+}
+input[type='text']:focus{
+    background-color: aquamarine;}
+input[type='name']:focus{
+background-color: aquamarine;}
+input[type='email']:focus{
+background-color: aquamarine;}
+.btn5{
+    margin-left: 96%;
+}
+.btn6
+{
+    margin-right: 25%;
+}
+.bill
+{
+    text-align: center;
+    color: yellow;
+}

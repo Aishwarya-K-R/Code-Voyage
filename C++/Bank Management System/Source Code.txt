@@ -1,0 +1,436 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include<ctime>
+
+using namespace std;
+class user
+{
+public:
+    string Name;
+    int d, m, y,p=0,q=0,r=0,n=0,a=0;
+    float amt;
+    string AccNo = "ACXXXXXX";
+    int64_t Phone;
+    int64_t AdrNo;
+    string Addr;
+    float balance = 0.0;
+    string bal[20];
+    string amount[20];
+    string dw[20];
+    string dati[20];
+    char DW;
+
+    int search(string, user u[20]);
+    void deposit();
+    void withdraw();
+    void create();
+    void update();
+    void close();
+    void showbalance();
+    void showdetails();
+    void display();
+};
+void fail()
+{
+    while (cin.fail())
+    {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Invalid input please re-enter" << endl;
+    }
+}
+void user::close()
+{
+    this->showdetails();
+    this->display();
+    this->AccNo = "Closed";
+    cout<<"*************************************************CLOSED*************************************************"<<endl;
+    cout << "Your account has been closed please take the remaining amount from the nearby branch" << endl;
+}
+
+void user::showbalance()
+{
+    cout << "CURRENT BALANCE = " << this->balance << endl;
+}
+void user::showdetails()
+{
+
+    cout << "BANKHOLDER DETAILS " << endl;
+    cout << "Bank Name : ABC" << endl;
+    cout << "Name : " << this->Name << endl;
+    cout << "DOB : " << this->d << "/" << this->m << "/" << this->y << endl;
+    cout << "Phone Number : " << this->Phone << endl;
+    cout << "Aadhar Number : " << this->AdrNo << endl;
+    cout << "Residential Address : " << this->Addr << endl;
+    cout << "Account Number : " << this->AccNo << endl;
+    cout << "Balance Amount : " << this->balance << endl;
+}
+
+void user::create()
+{
+    int a = 0, i, random, done = 0;
+    cout << "ENTER THE BANKHOLDER DETAILS" << endl;
+    cout << "Enter the Name" << endl;
+    cin.ignore();
+    getline(cin, this->Name);
+    while (!done)
+    {
+        cout << "Enter the Date of birth (dd/mm/yyyy)" << endl;
+        cin >> this->d >> this->m >> this->y;
+        if (cin.fail())
+        {
+            fail();
+            cin >> this->d >> this->m >> this->y;
+        }
+        if ((2023 - this->y) < 18 || (2023 - this->y) > 90)
+        {
+            cout << "Please enter the valid dob:" << endl;
+        }
+        else
+            done = 1;
+    }
+
+    done = 0;
+    while (!done)
+    {
+        cout << "Enter the Phone Number" << endl;
+        cin >> this->Phone;
+        if (cin.fail())
+        {
+            fail();
+            cin >> this->Phone;
+        }
+        if (to_string(this->Phone).length() != 10)
+            cout << "Not valid please enter again" << endl;
+        else
+            done = 1;
+    }
+    done = 0;
+    while (!done)
+    {
+        cout << "Enter the Aadhar Number" << endl;
+        cin >> this->AdrNo;
+        if (cin.fail())
+        {
+            fail();
+            cin >> this->AdrNo;
+        }
+        if (to_string(this->AdrNo).length() != 12)
+            cout << "Not valid please enter again" << endl;
+        else
+            done = 1;
+    }
+    cout << "Enter the Residential Address:" << endl;
+    cin.ignore();
+    getline(cin, this->Addr);
+    cout << "BANK ACCOUNT CREATED" << endl;
+    random = 1000 + (rand() % 9000);
+    this->AccNo = this->AccNo + to_string(random);
+    cout << "Your Account Number:" << this->AccNo << endl;
+    if (this->y - 2023 >= 65)
+    {
+        this->balance = 3000;
+    }
+    else
+    {
+        this->balance = 5000;
+    }
+    cout << "Your Balance Amount:" << this->balance << endl;
+}
+void user::update()
+{
+    string update;
+    int choice, done = 0, done1 = 0;
+    int newd, newm, newy;
+    int64_t newphone, newadr;
+    while (!done)
+    {
+        cout << "Enter the details you want to update" << endl;
+        cout << "1.Name\n2.Date of Birth\n3.Phone Number\n4.Aadhar number\n5.Address" << endl;
+
+        cin >> choice;
+        if (cin.fail())
+        {
+            fail();
+            cin >> choice;
+        }
+        switch (choice)
+        {
+        case 1:
+            cout << "Enter the Name to be updated:" << endl;
+            cin.ignore();
+            getline(cin, update);
+            this->Name = update;
+            done = 1;
+            break;
+        case 2:
+            while (!done1)
+            {
+                cout << "Enter the date of birth to be updated (dd/mm/yyyy):" << endl;
+                cin >> newd >> newm >> newy;
+                if (cin.fail())
+                {
+                    fail();
+                    cin >> newd >> newm >> newy;
+                }
+
+                this->d = newd;
+                this->m = newm;
+                this->y = newy;
+
+                if ((2023 - this->y) < 18 || (2023 - this->y) > 901)
+                {
+                    cout << "Please enter the valid dob:" << endl;
+                }
+                else
+                    done1 = 1;
+            }
+            done = 1;
+            break;
+        case 3:
+            while (!done1)
+            {
+                cout << "Enter the Phone Number to be updated:" << endl;
+                cin >> newphone;
+                this->Phone = newphone;
+                if (cin.fail())
+                {
+                    fail();
+                    cin >> newphone;
+                }
+                if (to_string(this->Phone).length() != 10)
+                    cout << "Not valid please enter again" << endl;
+                else
+                    done1 = 1;
+            }
+            done = 1;
+            break;
+        case 4:
+            while (!done1)
+            {
+                cout << "Enter the Aadhar Number to be updated:" << endl;
+                cin >> newadr;
+                this->AdrNo = newadr;
+                if (cin.fail())
+                {
+                    fail();
+                    cin >> newadr;
+                }
+                if (to_string(this->AdrNo).length() != 12)
+                    cout << "Not valid please enter again" << endl;
+                else
+                    done1 = 1;
+            }
+
+            done = 1;
+            break;
+        case 5:
+            cout << "Enter the Address to be updated:" << endl;
+            cin.ignore();
+            getline(cin, update);
+            this->Addr = update;
+            done = 1;
+            break;
+        default:
+            cout << "Please enter a vaild choice" << endl;
+        }
+    }
+
+    cout << "DETAILS UPDATED" << endl;
+}
+
+int user::search(string AccNo1, user u[20])
+{
+    int k = 0;
+    int i;
+    for (i = 0; i < 20; i++)
+    {
+        if (u[i].AccNo.compare(AccNo1) == 0)
+        {
+            k = 1;
+            break;
+        }
+        if (u[i].AccNo.compare("Closed") == 0)
+        {
+            k=-2;
+        }
+    }
+    if (k == 0)
+    {
+        return -1;
+    }
+    else if(k==-2)
+    {
+        return -2;
+    }
+    else
+    {
+        return i;
+    }
+}
+void user::deposit()
+{
+    this->DW='D';
+    dw[p++]=this->DW;
+    cout << "Enter amount you want to deposit" << endl;
+    cin >> amt;
+    amount[q++]=to_string(this->amt);
+    this->balance += amt;
+    bal[r++]=to_string(this->balance);
+    cout << "Balance updated" << endl;
+    n++;
+    time_t now = time(0);
+    char* dt = ctime(&now);
+    dati[a++]=dt;
+}
+void user::withdraw()
+{
+
+    cout << "Enter amount you want to withdraw" << endl;
+    cin >> amt;
+    if (this->balance - amt < 5000)
+    {
+        cout << "You cant draw this amount as your balance will be below the minimum amount" << endl;
+    }
+    else
+    {
+        this->balance -= amt;
+        cout << "Balance updated" << endl;
+        amount[q++]=to_string(this->amt);
+        bal[r++]=to_string(this->balance);
+        this->DW='W';
+        dw[p++]=this->DW;
+        n++;
+        time_t now = time(0);
+        char* dt = ctime(&now);
+        dati[a++]=dt;
+    }
+}
+void user::display()
+{
+    int k;
+    cout<<"************************************************ABC BANK************************************************"<<endl;
+    cout<<"------------------------------------------------PASSBOOK------------------------------------------------"<<endl;
+    cout<<"NAME : "<<this->Name<<endl;
+    cout<<"ACCOUNT NUMBER : "<<this->AccNo<<endl;
+    cout<<"------------------------------------------TRANSACTION DETAILS-------------------------------------------"<<endl;
+    cout<<"D/W"<<"\t\t\t"<<"AMOUNT"<<"\t\t\t"<<"CURRENT BALANCE"<<"\t\t\t"<<"DATE AND TIME"<<endl;
+    for(k=0;k<n;k++)
+    {
+    cout<<dw[k]<<"\t\t\t"<<amount[k]<<"\t\t"<<bal[k]<<"\t\t\t"<<dati[k]<<endl;
+    }  
+}
+int main()
+{
+    user u[20];
+    user main;
+    int ch, f = 0, g = 0, done = 0, acno;
+    string acno1;
+    while (true)
+    {
+        done = 0;
+        while (!done)
+        {
+            cout << "\nWELCOME TO ABC BANK" << endl;
+            cout << "1.Create Bank Account" << endl;
+            cout << "2.Update Bank Account" << endl;
+            cout << "3.Deposit Amount" << endl;
+            cout << "4.Withdraw Amount" << endl;
+            cout << "5.Show Balance" << endl;
+            cout << "6.Show Account Holder's Details" << endl;
+            cout << "7.View Passbook"<<endl;
+            cout << "8.Close Bank Account" << endl;
+            cout << "9.Exit" << endl;
+            cout << "Enter your choice" << endl;
+            cin >> ch;
+            if (cin.fail())
+            {
+                fail();
+                cin >> ch;
+            }
+            if (ch == 9)
+                exit(0);
+            if (ch != 1)
+            {
+                acno = 0;
+                cout << "Enter last four digits of your your account number" << endl;
+                cin >> acno;
+                if (cin.fail())
+                {
+                    fail();
+                    cin >> acno;
+                }
+                acno1 = "ACXXXXXX" + to_string(acno);
+                f = main.search(acno1, u);
+                if (f == -1)
+                {
+                    cout << "Account number not found" << endl;
+                    cout << "Try again" << endl;
+                }
+                else if (f == -2)
+                {
+                    cout << "Your account has been closed" << endl;
+                }
+                else
+                    done = 1;
+            }
+            else
+                done = 1;
+        }
+        switch (ch)
+        {
+        case 1:
+        {
+            u[g].create();
+            g++;
+            break;
+        }
+        case 2:
+        {
+            u[f].update();
+            break;
+        }
+        case 3:
+        {
+
+            u[f].deposit();
+            break;
+        }
+        case 4:
+        {
+
+            u[f].withdraw();
+            break;
+        }
+        case 5:
+        {
+            u[f].showbalance();
+            break;
+        }
+        case 6:
+        {
+            u[f].showdetails();
+            break;
+        }
+        case 7:
+        {
+
+            u[f].display();
+            break;
+        }
+        case 8:
+        {
+            u[f].close();
+            break;
+        }
+        default:
+        {
+            cout << "Enter the right option" << endl;
+        }
+        }
+    }
+    return 1;
+}
+
+

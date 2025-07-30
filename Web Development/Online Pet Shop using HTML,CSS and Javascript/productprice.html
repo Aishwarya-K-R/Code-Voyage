@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+    alert("Welcome to billing dashboard!")
+    alert("Fill the required details to generate the bill")
+    function printdata()
+    {
+      alert("Scroll up the page to view the generated bill")
+      var username=document.getElementById('name');
+      document.getElementById('UserName').innerHTML="**********BILL**********"+"<br><br>"+ "NAME : "+username.value;
+      var gender=document.getElementsByName('gender');
+      for(let i=0;i<gender.length;i++)
+      {
+          if(gender[i].checked)
+          {
+            document.getElementById('UserGender').innerHTML= "GENDER : "+gender[i].value;    
+          }
+      }
+      var userage=document.getElementById('age');
+      document.getElementById('UserAge').innerHTML= "AGE : "+userage.value;
+      var useremail=document.getElementById('email');
+      document.getElementById('UserMail').innerHTML= "EMAIL : "+useremail.value;
+      var useraddress=document.getElementById('location');
+      var userphone=document.getElementById('pno');
+      document.getElementById('UserPhone').innerHTML= "PHONE NO. : "+userphone.value;
+      document.getElementById('UserAddress').innerHTML= "RESIDENTIAL ADDRESS : "+useraddress.value;
+      var pno=["1","2","3","4","5","6","7","8","9","10"];
+      var pbreed=["PEDIGREE - CHICKEN AND MILK","BONES","CHEW STICKS","WHISKAS - OCEAN FISH FLAVOR","DROOLS BISCUITS","CHEW STICKS","FIRST AID KIT","NOTIX POWDER - ANTI TICK AND FLEA FREE","CHEST BELT WITH LEASH","COLLAR BELT WITH BELTS"]
+      var pcolor=["PUPPY","PUPPY/DOG","PUPPY/DOG","CAT","CAT","KITTEN/CAT","DOG/CAT","DOG/CAT","DOG/CAT","DOG/CAT"]
+      var pwt=["10 KG","1 KG","1 KG","1 KG","3 KG","400 G","1 KG","1 PC.","100 G","1 PC.","2 PCS."]
+      var pcost=["RS.2100","RS.580","RS.250","RS.1000","RS.221","RS.185","RS.1975","RS.225","RS.955","RS.192"]
+      var puppy=document.getElementsByName('puppy');
+    for(let i=0;i<puppy.length;i++)
+    {
+        if(puppy[i].checked)
+        {
+          document.getElementById('puppychoice').innerHTML="PRODUCT NO. : "+pno[i]+"<br><br>"+"PRODUCT NAME : "+pbreed[i]+"<br><br>"+"PRODUCT FOR : "+pcolor[i]+"<br><br>"+"NET WEIGHT : "+pwt[i]+"<br><br>"+"PRODUCT COST : "+pcost[i]+"<br><br>"+"*******THANK YOU*******"+"<br><br>"+"~~~~~~~VISIT AGAIN~~~~~~~"+"<br><br>"+"For any queries,"+"<br><br>"+"CONTACT NO. : 9886959929"+"<br><br>"+"ADDRESS : CHARLIE PET PALACE, #15, 12th Main, 20th Cross, Nagarbhavi, Bangalore-72"+"<br><br>"+"TIMINGS : 9:00 AM TO 10:00 PM";     
+        }
+    }
+
+
+    }
+    </script>
+</head>
+<body style="background-color: rgb(250, 189, 135);">
+<p id="heading">CHARLIE PET PALACE</p>
+<img src="Screenshot (219).png" width="1800px" height="10px">
+<a href="buyproducts.html">
+<button class="btn1">BACK</button></a>
+</a>
+<a href="firstpage.html">
+<button class="btn2">HOME</button>
+</a>
+<h3 style="color: crimson; text-align: center;">WELCOME TO BILLING DASHBOARD</h3>
+<h5 style="color: black; text-align: center;">Please fill the details to generate the bill</h5>
+<br>
+  <form>
+    <label>CUSTOMER'S NAME</label>
+    <br><br>
+    <input type="name" id="name" placeholder="Full Name">
+    <br><br>
+    <label>SELECT GENDER</label>
+    <br><br>
+    <label>MALE</label>
+    <input type="radio" id="Male" name="gender" value="Male">
+    <br><br>
+    <label>FEMALE</label>
+    <input type="radio" id="Female" name="gender" value="Female">
+    <br><br>
+    <label>OTHERS</label>
+    <input type="radio" id="Others" name="gender" value="Others">
+    <br><br>
+    <label>AGE</label>
+    <br><br>
+    <input type="number" id="age" placeholder="User Age" min="1" max="100">
+    <br><br>
+    <label>EMAIL</label>
+    <br><br>
+    <input type="email" id="email" placeholder="Enter Email....." >
+    <br><br>
+    <label>PHONE NO.</label>
+    <br><br>
+    <input type="name" id="pno">
+    <br><br>
+    <label>RESIDENTIAL ADDRESS</label>
+    <br><br>
+    <input type="text" id="location" placeholder="Enter Address">
+    <br><br>
+    <label>SELECT THE PRODUCT YOU WANT TO BUY</label>
+    <br><br>
+    <label>PRODUCT NO. 1</label>
+    <input type="radio" id="pup1" name="puppy" value="pup1">
+    <br><br>
+    <label>PRODUCT NO. 2</label>
+    <input type="radio" id="pup2" name="puppy" value="pup2">
+    <br><br>
+    <label>PRODUCT NO. 3</label>
+    <input type="radio" id="pup3" name="puppy" value="pup3">
+    <br><br>
+    <label>PRODUCT NO. 4</label>
+    <input type="radio" id="pup4" name="puppy" value="pup4">
+    <br><br>
+    <label>PRODUCT NO. 5</label>
+    <input type="radio" id="pup5" name="puppy" value="pup5">
+    <br><br>
+    <label>PRODUCT NO. 6</label>
+    <input type="radio" id="pup6" name="puppy" value="pup6">
+    <br><br>
+    <label>PRODUCT NO. 7</label>
+    <input type="radio" id="pup7" name="puppy" value="pup7">
+    <br><br>
+    <label>PRODUCT NO. 8</label>
+    <input type="radio" id="pup8" name="puppy" value="pup8">
+    <br><br>
+    <label>PRODUCT NO. 9</label>
+    <input type="radio" id="pup9" name="puppy" value="pup9">
+    <br><br>
+    <label>PRODUCT NO. 10</label>
+    <input type="radio" id="pup10" name="puppy" value="pup10">
+    <br><br>
+    <button type="reset">RESET</button>
+    <br>
+    </form>
+    <button type="submit" onclick="printdata()">SUBMIT</button>
+    <p id="UserName"></p>
+    <p id="UserAge"></p>
+    <p id="UserMail"></p>
+    <p id="UserGender"></p>
+    <p id="UserPhone"></p>
+    <p id="UserAddress"></p>
+    <p id="puppychoice"></p>
+    </body>
+    </html>
+
+
+<!-- function printdata()
+{
+    //alert("button clicked")
+    var username=document.getElementById('name');//to access id=name in Javascript by integrating forms
+    console.log(username.value)
+    var userage=document.getElementById('age');
+    console.log(userage.value)
+    var useremail=document.getElementById('email');
+    console.log(useremail.value)
+    var userdob=document.getElementById('dob');
+    console.log(userdob.value)
+    var userdobwt=document.getElementById('dobwt');
+    console.log(userdobwt.value)
+    var range=document.getElementById('slider');
+    console.log(range.value)
+    var choice=document.getElementById('dropdown');
+    console.log(choice.value)
+    var subject=document.getElementsByName('Subjects');//subject->array
+    for(let i=0;i<subject.length;i++)
+    {
+        if(subject[i].checked)//to check and print the box that is ticked
+        {
+          console.log(subject[i].value);     
+        }
+    }
+    var gender=document.getElementsByName('gender');//subject->array
+    for(let i=0;i<gender.length;i++)
+    {
+        if(gender[i].checked)//to check and print the box that is ticked
+        {
+          console.log(gender[i].value);     
+        }
+    }
+    alert(document.getElementById('UserName').innerHTML=username.value);
+    document.getElementById('UserAge').innerHTML=userage.value;
+    document.getElementById('UserMail').innerHTML=useremail.value;
+    document.getElementById('Country').innerHTML=choice.value;
+}
+
+</script>
+<form>
+    <label>UserName</label>
+    <br>
+    <input type="text" id="name" placeholder="Full Name" required/>
+    <br>
+    <label>Age</label>
+    <br>
+    <input type="number" id="age" placeholder="User Age" min="18" max="60"/>
+    <br>
+    <label>Select Country</label>
+    <br>
+    <select id="dropdown">
+        <option>India</option>
+        <option>Australia</option>
+        <option>Pakistan</option>
+    </select>
+    <br>
+    <label>Transform Calculus</label>
+    <input type="checkbox" id="subj1" name="Subjects" value="Transform Calculus"/>
+    <br>
+
+    <label>Numerical Methods</label>
+    <input type="checkbox" id="subj2" name="Subjects" value="Numerical Methods"/>
+    <br>
+     
+    <label>Cyber Security</label>
+    <input type="checkbox" id="subj3" name="Subjects" value="Cyber Security"/>
+    <br>
+
+    <label>Programming in JAVA</label>
+    <input type="checkbox" id="subj4" name="Subjects" value="Programming in JAVA"/>
+    <br>
+
+    <label>Ethical Hacking</label>
+    <input type="checkbox" id="subj5" name="Subjects" value="Ethical Hacking"/>
+    <br>
+
+    <p>Radio Buttons in HTML</p>
+    <label>Select Gender</label>
+    <br>
+    <label>Male</label>
+    <input type="radio" id="male" name="gender" value="male"/>
+    <br>
+    <label>Female</label>
+    <input type="radio" id="female" name="gender" value="female"/>
+    <br>
+    <label>Others</label>
+    <input type="radio" id="others" name="gender" value="male"/>
+    <br>
+
+    <label>Email</label>
+    <br>
+    <input type="email" id="email" placeholder="Enter Email....." required/>
+    <br>
+<label>Date of Birth</label>
+<br>
+<input type="date" id="dob"/>
+<br>
+
+<label>Date of Birth with Time</label>
+<br>
+<input type="datetime-local" id="dobwt"/>
+<br>
+
+<input type="range" id="slider" max="200"/>
+<br>
+<input type="search" placeholder="Search here....." id="searchfield"/>
+<br>
+
+<input type="file" id="file"/>
+<br>
+
+<input type="color" id="color"/>
+<br>
+
+<!-- <button type="submit" onclick="printdata()">Submit</button>
+<br> -->
+<!-- <input type="button" id="submit" value="submit"/>
+<br> -->
+<!-- 
+<button type="reset">Reset</button>
+</form>
+<button type="submit" onclick="printdata()">Submit</button>
+<h4>Entered data</h4>
+<br>  
+<p id="UserName"></p>
+<p id="UserAge"></p>
+<p id="UserMail"></p>
+<p id="Country"></p>
+<p id="selectedcheckbox"></p>
+<p id="UserGender"></p>
+
+</body>
+</html> --> 
