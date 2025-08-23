@@ -1,4 +1,4 @@
-***** VizAI : A Natural Language Interface for Automated Data Visualization (Final Year Team Project) *****
+***** VizAI : A Natural Language Interface for Automated Data Visualization *****
 
 Overview of the Project :
 - VizAI is a web-based system designed to simplify data visualization through natural language queries. 
